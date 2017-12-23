@@ -52,8 +52,8 @@ printGrid()
 playGame()
 {
 	int round;
-	
-	do
+		
+	while(gameOver!=1)
 	{
 	 printf("\n\nROUND %d:\n",round+1);
 	 player=1;
@@ -68,8 +68,7 @@ playGame()
 	  ++player;
 	 }
      while(player<3);		// player go
-	}
-	while(gameOver!=1);		// round
+	}	// round
 	
 }		// funct
 
