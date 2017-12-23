@@ -1,11 +1,12 @@
 #include <stdio.h>
 
 
-    //char grid[3][3]={'1','2','3','4','5','6','7','8','9'};	// function 1
-    int grid[3][3]={1,2,3,4,5,6,7,8,9};						// function 1
-    int user; 												// function 2, 3, 4
-    int player;												// function 2, 3
-
+    //char grid[3][3]={'1','2','3','4','5','6','7','8','9'};		// function 1
+    int grid[3][3]={1,2,3,4,5,6,7,8,9};								// function 1
+    int user; 														// function 2, 3, 4
+    int player;														// function 2, 3, 4
+    char outputGrid[3][3]={'1','2','3','4','5','6','7','8','9'};	// function 4, edited grid
+    
 main()
 {
     printGrid();
@@ -52,7 +53,7 @@ playGame()
 	  printf("\nPlayer %d: please select postion 1-9: ",player);
 	  scanf(" %d",&user);											// scan as int ***
 	  
-	  checkInput();
+	  checkInput2();
 	  ++player;
 	 }	// player go
      while(player<3);
@@ -60,7 +61,7 @@ playGame()
 }		// funct
 
 // Function 3: Check User Input
-checkInput()
+checkInput2()
 {
 	int x,y;
 	int checkAvailable;
@@ -78,8 +79,7 @@ checkInput()
 	
 	if(checkAvailable==1) 
 	{
-	 //printf("Valid Move");
-	 editGrid();
+	 editGrid2();
 	}
 	else 
 	{
@@ -89,9 +89,8 @@ checkInput()
 }
 
 // Function 4: Output the Grid
-editGrid()
+editGrid2()
 {
-	char outputGrid[3][3]={'1','2','3','4','5','6','7','8','9'};	// edited grid
 	int i,j;
 	char check=user;
 		  
