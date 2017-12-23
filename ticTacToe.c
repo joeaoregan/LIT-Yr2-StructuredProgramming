@@ -6,30 +6,21 @@
 
 main()
 {
-   
-      
-    int i=0,j=0;
-	//int k=0,l=0;
-    
-    int user;
-    char grid[3][3]={'1','2','3','4','5','6','7','8','9'};
-    
-    printGrid(i,j);
-
-	gameRound();
-
+    printf("Please Select Postition From Grid\n");
+    printGrid();
+    gameRound();
 
     getch();
     return(0);
  } // end of main
 
 
-// function 1: Print Grid
-printGrid(int x, int y)
+// function 1: Print Intitial Grid
+printGrid()
 {  
-	char grid[3][3]={'1','2','3','4','5','6','7','8','9'};
+int x,y;
 
-	printf("Select Position On Grid:\n");
+	char grid[3][3]={'1','2','3','4','5','6','7','8','9'};
  
     for(x=0;x<3;++x)
     {
@@ -40,19 +31,17 @@ printGrid(int x, int y)
      }
      if(x<2)printf("\n__________\n");
     }
-     
-} // end function
-
+}
 
 // Function 2: Game Rounds
 gameRound()
 {
-	int r; // round counter
+	int r; // count up to 5 rounds
 	for(r=1;r<=5;++r)
 	{
 	printf("\n\nROUND %d:\n",r);
 	playerGoes();
-	} // end of r
+	}
 }
 
 // Function 3: Player Goes
@@ -61,13 +50,49 @@ playerGoes()
 	int x=0,y=0,z=0;
 	char user;
 	
-	for(z=1;z<=2;++z) // Player goes
+	for(z=1;z<=2;++z) // Count for 2 players
   	{
-     
      printf("\nPlayer %d: please select postion 1-9: ",z);
      scanf(" %c",&user);
-     
+     printGrid(); // --- swap with edited grid
 	}
-    
-} // end function
+}
 
+// Function 4: Edit Grid
+editGrid()
+{  
+int x,y;
+	char input;
+	char outputGrid[3][3]={'1','2','3','4','5','6','7','8','9'};
+ 
+    for(x=0;x<3;++x)
+    {
+     for(y=0;y<3;++y)
+     {
+    	playerGoes();
+      if (input==outputGrid[x][y])
+      {
+       outputGrid[x][y]='X';
+      }
+      printf("%c ",ouputGrid[x][y]);
+	  if (y<2)printf("| ");
+     }
+     if(x<2)printf("\n__________\n");
+    }
+}
+
+/*
+    for(i=0;i<3;++i)
+    {
+    
+     for(j=0;j<3;++j)
+     {
+      if (user==grid[i][j])
+      {
+       outputGrid[i][j]='X';
+      }
+     //printf("%c ",outputGrid[i][j]);
+    // }
+     //printf("\n");
+    //}
+    */
