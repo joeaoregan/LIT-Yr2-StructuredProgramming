@@ -7,6 +7,7 @@
     int player;														// function 2, 3, 4
     char arrOutput[3][3]={'1','2','3','4','5','6','7','8','9'};		// function 4, 5 		edited grid
     int check1to9,checkXorO;										// function 3, 4
+    int gameOver=0;													// function 2, 6
     
     
 main()
@@ -15,8 +16,8 @@ main()
 	printf("\nPlayer 1 = X\n");
 	printf("Player 2 = O\n\n");
 	
-    printGrid();
-	playGame();  // Goes through 5 rounds
+    printGrid();				// print original integer grid
+	playGame();					// until gameOver changes to 1
 	
 	getch();
     return(0);
@@ -36,7 +37,7 @@ printGrid()
      {
       for(y=0;y<3;++y)
       {
-       printf("%d ",grid[x][y]); //changed to int
+       printf("%d ",grid[x][y]);
       	   
 	   if (y<2)printf("| ");
       } // y
@@ -52,25 +53,24 @@ playGame()
 {
 	int round;
 	
-	for(round=0;round<=5;++round) // rounds loop
+	do
 	{
 	 printf("\n\nROUND %d:\n",round+1);
 	 player=1;
-	 //for(player=1;player<=2;++player) // Player goes
-	 
 	 do
 	 {
 	  printf("\nPlayer %d: please select postion 1-9: ",player);
 	  scanf(" %d",&input);
 	  
-	 winnerTest();
+	  winnerTest();
 	
 	  checkInput1to9();
 	  ++player;
-	 }	// player go
-     while(player<3);
-     
-	}	// round
+	 }
+     while(player<3);		// player go
+	}
+	while(gameOver!=1);		// round
+	
 }		// funct
 
 /*****************************************************/
@@ -210,11 +210,13 @@ winnerTest()
 	if(winner==1)
 	{
 	 printf("\nGAME OVER\nPlayer 1 Is The Winner\n\n");
-	 player+=2;
+	 player+=2;		// terminate player 1 or 2 turn loop
+	 gameOver=1;	// terminate rounds loop
 	}	
 	if(winner==2)
 	{
 	 printf("\nGAME OVER\nPlayer 2 Is The Winner\n\n");
 	 player+=2;
+	 gameOver=1;
 	}	
 }
