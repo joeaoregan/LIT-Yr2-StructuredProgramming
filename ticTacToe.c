@@ -2,14 +2,19 @@
 
 
     //char grid[3][3]={'1','2','3','4','5','6','7','8','9'};		// function 1
-    int grid[3][3]={1,2,3,4,5,6,7,8,9};								// function 1
+    int grid[3][3]={1,2,3,4,5,6,7,8,9};								// function 1			original grid
     int input; 														// function 2, 3, 4
     int player;														// function 2, 3, 4
-    char arrOutput[3][3]={'1','2','3','4','5','6','7','8','9'};		// function 4, edited grid
-    int check1to9,checkXorO;										// function checks
+    char arrOutput[3][3]={'1','2','3','4','5','6','7','8','9'};		// function 4, 5 		edited grid
+    int check1to9,checkXorO;										// function 3, 4
+    
     
 main()
 {
+	printf("Tic Tac Toe\n");
+	printf("\nPlayer 1 = X\n");
+	printf("Player 2 = O\n\n");
+	
     printGrid();
 	playGame();  // Goes through 5 rounds
 	
@@ -53,7 +58,7 @@ playGame()
 	  printf("\nPlayer %d: please select postion 1-9: ",player);
 	  scanf(" %d",&input);											// scan as int ***
 	  
-	 // check3inARow();
+	 winnerTest();
 	
 	  checkInput1to9();
 	  ++player;
@@ -136,8 +141,8 @@ editGrid()
 	  	
 	   if (input==grid[i][j])
 		{
-		 if(player==1)arrOutput[i][j]='O'; // player 1 = O
-		 if(player==2)arrOutput[i][j]='X'; // player 2 = X
+		 if(player==1)arrOutput[i][j]='X'; // player 1 = X
+		 if(player==2)arrOutput[i][j]='O'; // player 2 = O
 	    }
 	    printf("%c ",arrOutput[i][j]);
         if (j<2) printf("| ");
@@ -147,41 +152,45 @@ editGrid()
 	 }	// i
 }		// funct
 
-/*
+
 // Function 6: Check Winner
-check3inARow()
+winnerTest()
 {
-	int i,j;
-	char player1='X';
-	char player2='O';
+	int i,j,winner;
 	
+	//check rows
 	for(i=0;i<3;++i)
 	{
-		for(j=0;j<3;++j)
-		{
-			if (arrOuput[0][0]&&arrOutput[0]==player1)
+	 for(j=0;j<3;++j)
+	 {
+	  // Player 1
+	  // rows
+	  if((arrOutput[0][0]=='X') && (arrOutput[0][1]=='X') && (arrOutput[0][2]=='X')) winner=1; // 123
+	  if((arrOutput[1][0]=='X') && (arrOutput[1][1]=='X') && (arrOutput[1][2]=='X')) winner=1; // 456
+	  if((arrOutput[2][0]=='X') && (arrOutput[2][1]=='X') && (arrOutput[2][2]=='X')) winner=1; // 789
+	  // columns
+	  if((arrOutput[0][0]=='X') && (arrOutput[1][0]=='X') && (arrOutput[2][0]=='X')) winner=1; // 147
+	  if((arrOutput[0][1]=='X') && (arrOutput[1][1]=='X') && (arrOutput[2][1]=='X')) winner=1; // 258
+	  if((arrOutput[0][2]=='X') && (arrOutput[1][2]=='X') && (arrOutput[2][2]=='X')) winner=1; // 369
+	  // diagonals
+	  if((arrOutput[0][0]=='X') && (arrOutput[1][1]=='X') && (arrOutput[2][2]=='X')) winner=1; // 159
+	  if((arrOutput[0][2]=='X') && (arrOutput[1][1]=='X') && (arrOutput[2][0]=='X')) winner=1; // 357
+	  
+	  // Player 2
+	  // rows
+	  if((arrOutput[0][0]=='O') && (arrOutput[0][1]=='O') && (arrOutput[0][2]=='O')) winner=2; // 123
+	  if((arrOutput[1][0]=='O') && (arrOutput[1][1]=='O') && (arrOutput[1][2]=='O')) winner=2; // 456
+	  if((arrOutput[2][0]=='O') && (arrOutput[2][1]=='O') && (arrOutput[2][2]=='O')) winner=2; // 789
+	  // columns
+	  if((arrOutput[0][0]=='O') && (arrOutput[1][0]=='O') && (arrOutput[2][0]=='O')) winner=2; // 147
+	  if((arrOutput[0][1]=='O') && (arrOutput[1][1]=='O') && (arrOutput[2][1]=='O')) winner=2; // 258
+	  if((arrOutput[0][2]=='O') && (arrOutput[1][2]=='O') && (arrOutput[2][2]=='O')) winner=2; // 369
+	  // diagonals
+	  if((arrOutput[0][0]=='O') && (arrOutput[1][1]=='O') && (arrOutput[2][2]=='O')) winner=2; // 159
+	  if((arrOutput[0][2]=='O') && (arrOutput[1][1]=='O') && (arrOutput[2][0]=='O')) winner=2; // 357
+	 }	// j
+	}	// i
 	
-	
-	if (arrOutput[][]={'X','X','X','4','5','6','7','8','9'}) printf("\n Player 1 Wins Row 1");
-	/*
-	if (arrOutput[3][3]=={'1','2','3','X','X','X','7','8','9'}) printf("\n Player 1 Wins Row 2");
-	if (arrOutput[3][3]=={'1','2','3','4','5','6','X','X','X'}) printf("\n Player 1 Wins Row 3");
-	
-	if (arrOutput[3][3]=={'X','2','3','X','5','6','X','8','9'}) printf("\n Player 1 Wins Column 1");
-	if (arrOutput[3][3]=={'1','X','3','4','X','6','7','X','9'}) printf("\n Player 1 Wins Column 2");
-	if (arrOutput[3][3]=={'1','2','X','4','5','X','7','8','X'}) printf("\n Player 1 Wins Column 3");
-	
-	if (arrOutput[3][3]=={'X','2','3','4','X','6','7','8','X'}) printf("\n Player 1 Wins Diagonal");
-	if (arrOutput[3][3]=={'1','2','X','4','X','6','X','8','9'}) printf("\n Player 1 Wins Diagonal");
-	
-	if (arrOutput[3][3]=={'X','X','X','4','5','6','7','8','9'}) printf("\n Player 2 Wins Row 1");
-	if (arrOutput[3][3]=={'1','2','3','X','X','X','7','8','9'}) printf("\n Player 2 Wins Row 2");
-	if (arrOutput[3][3]=={'1','2','3','4','5','6','X','X','X'}) printf("\n Player 2 Wins Row 3");
-	
-	if (arrOutput[3][3]=={'X','2','3','X','5','6','X','8','9'}) printf("\n Player 2 Wins Column 1");
-	if (arrOutput[3][3]=={'1','X','3','4','X','6','7','X','9'}) printf("\n Player 2 Wins Column 2");
-	if (arrOutput[3][3]=={'1','2','X','4','5','X','7','8','X'}) printf("\n Player 2 Wins Column 3");
-	
-	if (arrOutput[3][3]=={'X','2','3','4','X','6','7','8','X'}) printf("\n Player 2 Wins Diagonal");
-	if (arrOutput[3][3]=={'1','2','X','4','X','6','X','8','9'}) printf("\n Player 2 Wins Diagonal");
-}*/
+	if(winner==1) printf("\nGAME OVER\nPlayer 1 Is The Winner\n");
+	if(winner==2) printf("\nGAME OVER\nPlayer 2 Is The Winner\n");
+}
