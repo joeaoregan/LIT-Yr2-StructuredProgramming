@@ -1,6 +1,6 @@
 #include<stdio.h>
 // global variables
-	int user;
+	char user;
     char grid[3][3]={'1','2','3','4','5','6','7','8','9'};			// original grid
 	char outputGrid[3][3]={'1','2','3','4','5','6','7','8','9'};	// edited grid
 	
@@ -82,7 +82,7 @@ editGrid(int player)
 
 // Function 4: Test User Input
 void testUserInput(int k2,char testInput)
-{/*
+{
 	//if(testInput < 1) printf("not expected input"); //&&(testInput > 9))
 	//else editGrid(k2);
 	int i,j;
@@ -93,12 +93,7 @@ void testUserInput(int k2,char testInput)
 	 {
 	  //if (testInput==grid[i][j]) editGrid(k2);	
 	  if (testInput!='1') printf("%c",testInput);// editGrid(k2);
-	  
-	  else printf("Not Expected input"); // LOOPS **************
-	  
-	  
+	  else printf("Not Expected input");
 	 }	// i
 	}	// j
-	*/
-	if(testInput==
 }
