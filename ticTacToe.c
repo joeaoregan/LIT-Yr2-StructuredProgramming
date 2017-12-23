@@ -6,93 +6,68 @@
 
 main()
 {
-    printf("Please Select Postition From Grid\n");
+   
+      
+    int i=0,j=0,k=0,l=0;
+    
+    int user;
+    char grid[3][3]={'1','2','3','4','5','6','7','8','9'};
+    
     printGrid();
-    gameRound();
+	playGame();
 
     getch();
     return(0);
  } // end of main
 
-
-// function 1: Print Intitial Grid
+// function 1: print original grid
 printGrid()
 {  
 int x,y;
+ char grid[3][3]={'1','2','3','4','5','6','7','8','9'};
 
-	char grid[3][3]={'1','2','3','4','5','6','7','8','9'};
+    printf("Select Position On Grid:\n");
  
     for(x=0;x<3;++x)
-    {
-     for(y=0;y<3;++y)
      {
-      printf("%c ",grid[x][y]);
-	  if (y<2)printf("| ");
-     }
-     if(x<2)printf("\n__________\n");
-    }
-}
-
-// Function 2: Game Rounds
-gameRound()
-{
-	int r; // count up to 5 rounds
-	for(r=1;r<=5;++r)
-	{
-	printf("\n\nROUND %d:\n",r);
-	playerGoes();
-	}
-}
-
-// Function 3: Player Goes
-playerGoes()
-{
-	int x=0,y=0,z=0;
-	char user;
-	
-	for(z=1;z<=2;++z) // Count for 2 players
-  	{
-     printf("\nPlayer %d: please select postion 1-9: ",z);
-     scanf(" %c",&user);
-     printGrid(); // --- swap with edited grid
-	}
-}
-
-// Function 4: Edit Grid
-editGrid()
-{  
-int x,y;
-	char input;
-	char outputGrid[3][3]={'1','2','3','4','5','6','7','8','9'};
- 
-    for(x=0;x<3;++x)
-    {
-     for(y=0;y<3;++y)
-     {
-    	playerGoes();
-      if (input==outputGrid[x][y])
+	  //if(x<3)printf("_ _ _"); // test grid
+      for(y=0;y<3;++y)
       {
-       outputGrid[x][y]='X';
-      }
-      printf("%c ",ouputGrid[x][y]);
-	  if (y<2)printf("| ");
-     }
-     if(x<2)printf("\n__________\n");
-    }
+       printf("%c ",grid[x][y]);
+      	   
+	   if (y<2)printf("| ");
+      } // y
+      if(x<2)printf("\n__________\n");
+     } // x
 }
 
-/*
-    for(i=0;i<3;++i)
-    {
+// function 2: play game
+playGame()
+{
+ for(l=1;l<=5;++l) // rounds loop
+ {
+  printf("\n\nROUND %d:\n",l);
+	
+  for(k=1;k<=2;++k) // Player goes
+  {
+   printf("\nPlayer %d: please select postion 1-9: ",k);
+   scanf(" %c",&user);
     
+   for(i=0;i<3;++i)
+    {
      for(j=0;j<3;++j)
      {
       if (user==grid[i][j])
       {
-       outputGrid[i][j]='X';
+       if(k==1)grid[i][j]='O'; // player 1 = O
+       if(k==2)grid[i][j]='X'; // player 2 = X
       }
-     //printf("%c ",outputGrid[i][j]);
-    // }
-     //printf("\n");
-    //}
-    */
+     printf("%c ",grid[i][j]);
+     if (j<2)printf("| ");
+     } // j
+    if(i<2)printf("\n__________\n");
+    else printf("\n");
+    } // i
+   }  // k
+ } 	   // l
+} // funct
