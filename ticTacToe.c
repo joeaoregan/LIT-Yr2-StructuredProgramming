@@ -1,8 +1,10 @@
 #include<stdio.h>
 // global variables
 	int user;
-    char grid[3][3]={'1','2','3','4','5','6','7','8','9'};
-	char outputGrid[3][3]={'1','2','3','4','5','6','7','8','9'};
+    char grid[3][3]={'1','2','3','4','5','6','7','8','9'};			// original grid
+	char outputGrid[3][3]={'1','2','3','4','5','6','7','8','9'};	// edited grid
+	
+//	void testUserInput(int k2,char testInput);
     
 main()
 {
@@ -46,14 +48,15 @@ playGame()
 	  printf("\nPlayer %d: please select postion 1-9: ",k);
 	  scanf(" %c",&user);
 	  
-	  editGrid(k);
+	  //testUserInput(k,user);
+	  //editGrid(k);
 	  
      }	// k
 	}	// l
 }		// funct
 
 // Function 3: Edit Grid
-editGrid(int x)
+editGrid(int player)
 {
 	int i,j;
 		  
@@ -63,8 +66,8 @@ editGrid(int x)
 	  {
 	   if (user==outputGrid[i][j])
 		{
-		 if(x==1)outputGrid[i][j]='O'; // player 1 = O
-		 if(x==2)outputGrid[i][j]='X'; // player 2 = X
+		 if(player==1)outputGrid[i][j]='O'; // player 1 = O
+		 if(player==2)outputGrid[i][j]='X'; // player 2 = X
 	    }
 	    printf("%c ",outputGrid[i][j]);
         if (j<2)printf("| ");
@@ -73,3 +76,24 @@ editGrid(int x)
 	  else printf("\n");
 	 }	// i
 }		// funct
+
+
+
+/*
+// Function 4: Test User Input
+void testUserInput(int k2,char testInput)
+{
+	//if(testInput < 1) printf("not expected input"); //&&(testInput > 9))
+	//else editGrid(k2);
+	int i,j;
+		  
+	for(i=0;i<3;++i)
+	{
+	 for(j=0;j<3;++j)
+	 {
+	  //if (testInput==grid[i][j]) editGrid(k2);	
+	  if (testInput!='1') printf("%c",testInput);// editGrid(k2);
+	  else printf("Not Expected input");
+	 }	// i
+	}	// j
+}*/
