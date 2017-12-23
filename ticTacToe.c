@@ -66,3 +66,23 @@ playGame()
      }	// k
 	}	// l
 }		// funct
+
+// Function 3: Edit Grid
+editGrid()
+{
+	int i,j;
+	
+	for(i=0;i<3;++i)
+	{
+	 for(j=0;j<3;++j)
+	 {
+	  if (user==outputGrid[i][j])
+	  {
+	   if(k==1)outputGrid[i][j]='O'; // player 1 = O
+	   if(k==2)outputGrid[i][j]='X'; // player 2 = X
+	  }
+	  printf("%c ",outputGrid[i][j]);
+      if (j<2)printf("| ");
+	 }	// j
+	}	// i
+}		// funct
