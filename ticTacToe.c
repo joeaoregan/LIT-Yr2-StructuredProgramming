@@ -3,7 +3,7 @@
 
     //char grid[3][3]={'1','2','3','4','5','6','7','8','9'};	// function 1
     int grid[3][3]={1,2,3,4,5,6,7,8,9};						// function 1
-    int user; 												// function 2, 3
+    int user; 												// function 2, 3, 4
     int player;												// function 2, 3
 
 main()
@@ -69,7 +69,7 @@ checkInput()
 	{
 	 for(y=0;y<3;++y)
 	 {
-	  if (user==grid[x][y]) 
+	  if (user==grid[x][y]) 		// test for already x or o
 	  {
 	   checkAvailable=1;
 	  }
@@ -78,8 +78,8 @@ checkInput()
 	
 	if(checkAvailable==1) 
 	{
-	 printf("Valid Move");
-	 //editGrid();
+	 //printf("Valid Move");
+	 editGrid();
 	}
 	else 
 	{
@@ -87,3 +87,27 @@ checkInput()
 	 --player;					 // RESET THE PLAYERS MOVE!!!!!!
 	}	
 }
+
+// Function 4: Output the Grid
+editGrid()
+{
+	char outputGrid[3][3]={'1','2','3','4','5','6','7','8','9'};	// edited grid
+	int i,j;
+	char check=user;
+		  
+	 for(i=0;i<3;++i)
+	 {
+	  for(j=0;j<3;++j)
+	  {
+	   if (check==outputGrid[i][j])
+		{
+		 if(player==1)outputGrid[i][j]='O'; // player 1 = O
+		 if(player==2)outputGrid[i][j]='X'; // player 2 = X
+	    }
+	    printf("%c ",outputGrid[i][j]);
+        if (j<2) printf("| ");
+	   } // j
+	  if(i<2)printf("\n__________\n");
+	  else printf("\n");
+	 }	// i
+}		// funct
