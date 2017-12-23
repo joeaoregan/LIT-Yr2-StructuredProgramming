@@ -59,11 +59,11 @@ playGame()
 	 player=1;
 	 do
 	 {
+	  winnerTest();
+	  
 	  printf("\nPlayer %d: please select postion 1-9: ",player);
 	  scanf(" %d",&input);
 	  
-	  winnerTest();
-	
 	  checkInput1to9();
 	  ++player;
 	 }
