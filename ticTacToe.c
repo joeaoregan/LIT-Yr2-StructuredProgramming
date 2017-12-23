@@ -48,8 +48,7 @@ playGame()
 	  printf("\nPlayer %d: please select postion 1-9: ",k);
 	  scanf(" %c",&user);
 	  
-	  testUserInput(k,user);
-	  //editGrid(k);
+	  checkInput(k,user); // **************test Input Function
 	  
      }	// k
 	}	// l
@@ -77,23 +76,29 @@ editGrid(int player)
 	 }	// i
 }		// funct
 
-
-
-
-// Function 4: Test User Input
-void testUserInput(int k2,char testInput)
+// Function 4: Check User Input
+checkInput()
 {
-	//if(testInput < 1) printf("not expected input"); //&&(testInput > 9))
-	//else editGrid(k2);
-	int i,j;
-		  
-	for(i=0;i<3;++i)
+	int x,y;
+	int temp;
+	
+	for(x=0;x<3;++x)
 	{
-	 for(j=0;j<3;++j)
+	 for(y=0;y<3;++y)
 	 {
-	  //if (testInput==grid[i][j]) editGrid(k2);	
-	  if (testInput!='1') printf("%c",testInput);// editGrid(k2);
-	  else printf("Not Expected input");
-	 }	// i
-	}	// j
+	  if (user==grid[x][y]) 
+	  {
+	   temp=1;
+	  }
+	 }	//y
+	}	//x
+	
+	if(temp==1) 
+	{
+	 printf("Valid Move");
+	}
+	else 
+	{
+	 printf("invalid move");
+	}	
 }
