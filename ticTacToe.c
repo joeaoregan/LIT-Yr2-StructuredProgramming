@@ -51,9 +51,10 @@ printGrid()
 
 playGame()
 {
-	int round;
-		
-	while(gameOver!=1)
+	int round=0;
+	
+	while(gameOver!=1)	
+	//while(round<5)
 	{
 	 printf("\n\nROUND %d:\n",round+1);
 	 player=1;
@@ -61,13 +62,18 @@ playGame()
 	 {
 	  winnerTest();
 	  
+	  while(gameOver!=1)
+	  {
 	  printf("\nPlayer %d: please select postion 1-9: ",player);
 	  scanf(" %d",&input);
+	  }
 	  
 	  checkInput1to9();
 	  ++player;
+	  
 	 }
      while(player<3);		// player go
+     //++round;
 	}	// round
 	
 }		// funct
@@ -79,8 +85,6 @@ playGame()
 checkInput1to9()
 {
 	int x,y;
-	//int check1to9;
-	int inputOK;
 	
 	for(x=0;x<3;++x)
 	{
@@ -95,7 +99,6 @@ checkInput1to9()
 	}	//x
 	
 	if((check1to9==1)&&(checkXorO==1))
-	//if(inputOK==1)
 	{
 	 editGrid();
 	}
