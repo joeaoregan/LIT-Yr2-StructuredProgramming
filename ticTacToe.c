@@ -53,6 +53,8 @@ playGame()
 	  printf("\nPlayer %d: please select postion 1-9: ",player);
 	  scanf(" %d",&input);											// scan as int ***
 	  
+	 // check3inARow();
+	
 	  checkInput1to9();
 	  ++player;
 	 }	// player go
@@ -145,3 +147,41 @@ editGrid()
 	 }	// i
 }		// funct
 
+/*
+// Function 6: Check Winner
+check3inARow()
+{
+	int i,j;
+	char player1='X';
+	char player2='O';
+	
+	for(i=0;i<3;++i)
+	{
+		for(j=0;j<3;++j)
+		{
+			if (arrOuput[0][0]&&arrOutput[0]==player1)
+	
+	
+	if (arrOutput[][]={'X','X','X','4','5','6','7','8','9'}) printf("\n Player 1 Wins Row 1");
+	/*
+	if (arrOutput[3][3]=={'1','2','3','X','X','X','7','8','9'}) printf("\n Player 1 Wins Row 2");
+	if (arrOutput[3][3]=={'1','2','3','4','5','6','X','X','X'}) printf("\n Player 1 Wins Row 3");
+	
+	if (arrOutput[3][3]=={'X','2','3','X','5','6','X','8','9'}) printf("\n Player 1 Wins Column 1");
+	if (arrOutput[3][3]=={'1','X','3','4','X','6','7','X','9'}) printf("\n Player 1 Wins Column 2");
+	if (arrOutput[3][3]=={'1','2','X','4','5','X','7','8','X'}) printf("\n Player 1 Wins Column 3");
+	
+	if (arrOutput[3][3]=={'X','2','3','4','X','6','7','8','X'}) printf("\n Player 1 Wins Diagonal");
+	if (arrOutput[3][3]=={'1','2','X','4','X','6','X','8','9'}) printf("\n Player 1 Wins Diagonal");
+	
+	if (arrOutput[3][3]=={'X','X','X','4','5','6','7','8','9'}) printf("\n Player 2 Wins Row 1");
+	if (arrOutput[3][3]=={'1','2','3','X','X','X','7','8','9'}) printf("\n Player 2 Wins Row 2");
+	if (arrOutput[3][3]=={'1','2','3','4','5','6','X','X','X'}) printf("\n Player 2 Wins Row 3");
+	
+	if (arrOutput[3][3]=={'X','2','3','X','5','6','X','8','9'}) printf("\n Player 2 Wins Column 1");
+	if (arrOutput[3][3]=={'1','X','3','4','X','6','7','X','9'}) printf("\n Player 2 Wins Column 2");
+	if (arrOutput[3][3]=={'1','2','X','4','5','X','7','8','X'}) printf("\n Player 2 Wins Column 3");
+	
+	if (arrOutput[3][3]=={'X','2','3','4','X','6','7','8','X'}) printf("\n Player 2 Wins Diagonal");
+	if (arrOutput[3][3]=={'1','2','X','4','X','6','X','8','9'}) printf("\n Player 2 Wins Diagonal");
+}*/
