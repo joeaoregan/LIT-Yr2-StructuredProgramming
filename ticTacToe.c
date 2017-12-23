@@ -5,7 +5,8 @@
     int grid[3][3]={1,2,3,4,5,6,7,8,9};								// function 1
     int input; 														// function 2, 3, 4
     int player;														// function 2, 3, 4
-    char arrOutput[3][3]={'1','2','3','4','5','6','7','8','9'};	// function 4, edited grid
+    char arrOutput[3][3]={'1','2','3','4','5','6','7','8','9'};		// function 4, edited grid
+    int check1to9,checkXorO;										// function checks
     
 main()
 {
@@ -64,31 +65,31 @@ playGame()
 checkInput1to9()
 {
 	int x,y;
-	int check1to9;
+	//int check1to9;
+	int inputOK;
 	
 	for(x=0;x<3;++x)
 	{
 	 for(y=0;y<3;++y)
 	 {
-	  if (input==grid[x][y]) 		// test for already x or o - if(arrOuput[x][y]=='X'
+	  if (input==grid[x][y])
 	  {
-	  	checkInputXorO();
-	  	editGrid();
-	   //check1to9=1;
+	  	checkInputXorO();		// test for already x or o
+		check1to9=1;
 	  }
 	 }	//y
 	}	//x
-	/*
-	if(check1to9==1) 
+	
+	if((check1to9==1)&&(checkXorO==1))
+	//if(inputOK==1)
 	{
-	 //printf("\noutput grid %c",[char]user);
 	 editGrid();
 	}
 	else 
 	{
 	 printf("Between 1 to 9!!! Try Again");
 	  --player;					 // RESET THE PLAYERS MOVE!!!!!!
-	}*/	
+	}
 }
 
 // Function 4: Check if X or O already
@@ -105,11 +106,16 @@ checkInputXorO()
 		if(arrOutput[x][y]=='X')
 		{
 		 printf("\nAlready X - Please Try Again\n");
+		 --player;
 		}
+		else checkXorO=1;								// ok to proceed
+		
 	  	if(arrOutput[x][y]=='O')
 		{
 		 printf("\nAlready O - Please Try Again\n");
+		 --player;
 		}
+		else checkXorO=1;								// ok to proceed
 	  }
 	 }	//y
 	}	//x
