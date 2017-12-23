@@ -23,8 +23,8 @@ main()
     printGrid();				// print original integer grid
 	playGame();					// until gameOver changes to 1
 	
-	printf("\n\nContinue? Press x to exit\n");
-	scanf(" %c",exit);
+	//printf("\n\nContinue? Press x to exit\n");
+	//scanf(" %c",exit);
 	//}
 	//while(exit!='x');
 	
@@ -63,35 +63,25 @@ playGame()
 	int round=0;
 	
 	while(gameOver!=1)	
-	//while(round<5)
-	//do 									// ERROR: goes to round 4 for player 2
 	{
 	 printf("\n\nROUND %d:\n",round+1);
 	 player=1;
-	 
-	 do
+	 	
+	 while(player<3)
 	 {
-	  winnerTest(); 						// ERROR: goes to already x or o
+	  winnerTest(); 						
 	  
 	  if((gameOver!=1) && (player < 3))
-	  {
-	  //winnerTest(); 						// ERROR: goes to player 4 at end
-	  //if(gameOver!=1){
+	  {	  
 	  printf("\nPlayer %d: please select postion 1-9: ",player);
 	  scanf(" %d",&input);
-	  //}
 	  
 	  checkInput1to9();
 	  ++player;
-	  
-	  }// 									// replace previous bracket -- still goes to round 4 before exit
-	  
+	  }
 	 }
-     while(player<3);		// player go
-     
      ++round;
 	}	// round
-	//while(gameOver!=1);
 }		// funct
 
 /*****************************************************/
