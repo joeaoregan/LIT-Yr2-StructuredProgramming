@@ -1,15 +1,7 @@
 #include<stdio.h>
 
-//#define ROWS 3
-//#define COLUMNS 3
-//char printGrid();
-
 main()
 {
-   
-      
-    int i=0,j=0,k=0,l=0;
-    
     int user;
     char grid[3][3]={'1','2','3','4','5','6','7','8','9'};
     
@@ -18,7 +10,7 @@ main()
 
     getch();
     return(0);
- } // end of main
+} // main
 
 // function 1: print original grid
 printGrid()
@@ -44,30 +36,33 @@ int x,y;
 // function 2: play game
 playGame()
 {
- for(l=1;l<=5;++l) // rounds loop
- {
-  printf("\n\nROUND %d:\n",l);
+	int i=0,j=0,k=0,l=0;
+	char user;
+	char outputGrid[3][3]={'1','2','3','4','5','6','7','8','9'};
 	
-  for(k=1;k<=2;++k) // Player goes
-  {
-   printf("\nPlayer %d: please select postion 1-9: ",k);
-   scanf(" %c",&user);
-    
-   for(i=0;i<3;++i)
-    {
-     for(j=0;j<3;++j)
-     {
-      if (user==grid[i][j])
-      {
-       if(k==1)grid[i][j]='O'; // player 1 = O
-       if(k==2)grid[i][j]='X'; // player 2 = X
-      }
-     printf("%c ",grid[i][j]);
-     if (j<2)printf("| ");
-     } // j
-    if(i<2)printf("\n__________\n");
-    else printf("\n");
-    } // i
-   }  // k
- } 	   // l
-} // funct
+	for(l=1;l<=5;++l) // rounds loop
+	{
+	 printf("\n\nROUND %d:\n",l);
+	 for(k=1;k<=2;++k) // Player goes
+	 {
+	  printf("\nPlayer %d: please select postion 1-9: ",k);
+	  scanf(" %c",&user);
+	  
+	  for(i=0;i<3;++i)
+	  {
+	   for(j=0;j<3;++j)
+	    {
+		 if (user==outputGrid[i][j])
+		 {
+		  if(k==1)outputGrid[i][j]='O'; // player 1 = O
+		  if(k==2)outputGrid[i][j]='X'; // player 2 = X
+		 }
+		printf("%c ",outputGrid[i][j]);
+     	if (j<2)printf("| ");
+	   } // j
+	   if(i<2)printf("\n__________\n");
+	   else printf("\n");
+	  }	// i
+     }	// k
+	}	// l
+}		// funct
