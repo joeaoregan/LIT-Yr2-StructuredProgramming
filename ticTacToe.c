@@ -60,11 +60,11 @@ playGame()
 	}	// round
 }		// funct
 
-// Function 3: Check User Input
+// Function 3: Check if user input is 1 to 9
 checkInput1to9()
 {
 	int x,y;
-	int checkAvailable;
+	int check1to9;
 	
 	for(x=0;x<3;++x)
 	{
@@ -72,12 +72,14 @@ checkInput1to9()
 	 {
 	  if (input==grid[x][y]) 		// test for already x or o - if(arrOuput[x][y]=='X'
 	  {
-	   checkAvailable=1;
+	  	checkInputXorO();
+	  	editGrid();
+	   //check1to9=1;
 	  }
 	 }	//y
 	}	//x
-	
-	if(checkAvailable==1) 
+	/*
+	if(check1to9==1) 
 	{
 	 //printf("\noutput grid %c",[char]user);
 	 editGrid();
@@ -86,10 +88,34 @@ checkInput1to9()
 	{
 	 printf("Between 1 to 9!!! Try Again");
 	  --player;					 // RESET THE PLAYERS MOVE!!!!!!
-	}	
+	}*/	
 }
 
-// Function 4: Output the Grid
+// Function 4: Check if X or O already
+checkInputXorO()
+{
+	int x,y;
+	
+	for(x=0;x<3;++x)
+	{
+	 for(y=0;y<3;++y)
+	 {
+	  if (input==grid[x][y]) 	
+	  {
+		if(arrOutput[x][y]=='X')
+		{
+		 printf("\nAlready X - Please Try Again\n");
+		}
+	  	if(arrOutput[x][y]=='O')
+		{
+		 printf("\nAlready O - Please Try Again\n");
+		}
+	  }
+	 }	//y
+	}	//x
+}
+
+// Function 5: Output the Grid
 editGrid()
 {
 	int i,j;
