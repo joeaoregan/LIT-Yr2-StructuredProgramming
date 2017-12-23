@@ -60,17 +60,19 @@ playGame()
 	 player=1;
 	 do
 	 {
-	  winnerTest();
+	  winnerTest(); 						// ERROR: goes to already x or o
 	  
-	  while(gameOver!=1)
+	  if((gameOver!=1) && (player < 3))
 	  {
+	  //winnerTest(); 						// ERROR: goes to player 4 at end
+	  //if(gameOver!=1){
 	  printf("\nPlayer %d: please select postion 1-9: ",player);
 	  scanf(" %d",&input);
-	  }
+	  //}
 	  
 	  checkInput1to9();
 	  ++player;
-	  
+	  }// 									// replace previous bracket
 	 }
      while(player<3);		// player go
      //++round;
