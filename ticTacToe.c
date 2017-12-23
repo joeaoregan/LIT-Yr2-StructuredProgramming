@@ -22,7 +22,10 @@ main()
     return(0);
 } // main
 
-// function 1: print original grid
+/*****************************************************/
+//			Function 1: print original grid
+/*****************************************************/
+
 printGrid()
 {  
 	int x,y;
@@ -40,9 +43,11 @@ printGrid()
       if(x<2)printf("\n__________\n");
      } // x
 }
+
+/*****************************************************/
+//				Function 2: play game
 /*****************************************************/
 
-// function 2: play game
 playGame()
 {
 	int round;
@@ -56,7 +61,7 @@ playGame()
 	 do
 	 {
 	  printf("\nPlayer %d: please select postion 1-9: ",player);
-	  scanf(" %d",&input);											// scan as int ***
+	  scanf(" %d",&input);
 	  
 	 winnerTest();
 	
@@ -68,7 +73,10 @@ playGame()
 	}	// round
 }		// funct
 
-// Function 3: Check if user input is 1 to 9
+/*****************************************************/
+//		Function 3: Check if user input is 1 to 9
+/*****************************************************/
+
 checkInput1to9()
 {
 	int x,y;
@@ -99,7 +107,10 @@ checkInput1to9()
 	}
 }
 
-// Function 4: Check if X or O already
+/*****************************************************/
+//		Function 4: Check if X or O already
+/*****************************************************/
+
 checkInputXorO()
 {
 	int x,y;
@@ -128,7 +139,10 @@ checkInputXorO()
 	}	//x
 }
 
-// Function 5: Output the Grid
+/*****************************************************/
+//			Function 5: Output the Grid
+/*****************************************************/
+
 editGrid()
 {
 	int i,j;
@@ -152,8 +166,10 @@ editGrid()
 	 }	// i
 }		// funct
 
+/*****************************************************/
+//				Function 6: Check Winner
+/*****************************************************/
 
-// Function 6: Check Winner
 winnerTest()
 {
 	int i,j,winner;
@@ -191,6 +207,14 @@ winnerTest()
 	 }	// j
 	}	// i
 	
-	if(winner==1) printf("\nGAME OVER\nPlayer 1 Is The Winner\n");
-	if(winner==2) printf("\nGAME OVER\nPlayer 2 Is The Winner\n");
+	if(winner==1)
+	{
+	 printf("\nGAME OVER\nPlayer 1 Is The Winner\n\n");
+	 player+=2;
+	}	
+	if(winner==2)
+	{
+	 printf("\nGAME OVER\nPlayer 2 Is The Winner\n\n");
+	 player+=2;
+	}	
 }
