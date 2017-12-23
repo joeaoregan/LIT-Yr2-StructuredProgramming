@@ -2,7 +2,7 @@
 // global variables
 	char user;
     char grid[3][3]={'1','2','3','4','5','6','7','8','9'};			// original grid
-	char outputGrid[3][3]={'1','2','3','4','5','6','7','8','9'};	// edited grid
+	//char outputGrid[3][3]={'1','2','3','4','5','6','7','8','9'};	// edited grid
 	int player;
 	
 //void testUserInput(int k2,char testInput);
@@ -10,7 +10,7 @@
 main()
 {
     printGrid();
-	playGame();
+	//playGame();
 
     getch();
     return(0);
@@ -34,7 +34,7 @@ printGrid()
       if(x<2)printf("\n__________\n");
      } // x
 }
-
+/*
 // function 2: play game
 playGame()
 {
@@ -48,7 +48,7 @@ playGame()
 	  printf("\nPlayer %d: please select postion 1-9: ",player);
 	  scanf(" %c",&user);
 	  
-	  checkInput(); // **************test Input Function
+	 // checkInput(); // **************test Input Function
 	  
      }	// k
 	}	// l
@@ -96,10 +96,11 @@ checkInput()
 	if(temp==1) 
 	{
 	 printf("Valid Move");
-	 editGrid();
+	 //editGrid();
 	}
 	else 
 	{
 	 printf("invalid move");
 	}	
 }
+*/
