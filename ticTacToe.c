@@ -3,8 +3,9 @@
 	char user;
     char grid[3][3]={'1','2','3','4','5','6','7','8','9'};			// original grid
 	char outputGrid[3][3]={'1','2','3','4','5','6','7','8','9'};	// edited grid
+	int player;
 	
-void testUserInput(int k2,char testInput);
+//void testUserInput(int k2,char testInput);
     
 main()
 {
@@ -24,7 +25,6 @@ printGrid()
  
     for(x=0;x<3;++x)
      {
-	  //if(x<3)printf("_ _ _"); // test grid
       for(y=0;y<3;++y)
       {
        printf("%c ",grid[x][y]);
@@ -38,24 +38,24 @@ printGrid()
 // function 2: play game
 playGame()
 {
-	int k=0,l=0;
+	int player=0,round;
 	
-	for(l=1;l<=5;++l) // rounds loop
+	for(round=0;round<=5;++round) // rounds loop
 	{
-	 printf("\n\nROUND %d:\n",l);
-	 for(k=1;k<=2;++k) // Player goes
+	 printf("\n\nROUND %d:\n",round);
+	 for(player=1;player<=2;++player) // Player goes
 	 {
-	  printf("\nPlayer %d: please select postion 1-9: ",k);
+	  printf("\nPlayer %d: please select postion 1-9: ",player);
 	  scanf(" %c",&user);
 	  
-	  checkInput(k,user); // **************test Input Function
+	  checkInput(); // **************test Input Function
 	  
      }	// k
 	}	// l
 }		// funct
 
 // Function 3: Edit Grid
-editGrid(int player)
+editGrid()
 {
 	int i,j;
 		  
@@ -79,8 +79,8 @@ editGrid(int player)
 // Function 4: Check User Input
 checkInput()
 {
-	int x,y;
-	int temp;
+	int x,y,temp;
+	int checkAvailable;
 	
 	for(x=0;x<3;++x)
 	{
@@ -88,7 +88,7 @@ checkInput()
 	 {
 	  if (user==grid[x][y]) 
 	  {
-	   temp=1;
+	   checkAvailable=1;
 	  }
 	 }	//y
 	}	//x
@@ -96,6 +96,7 @@ checkInput()
 	if(temp==1) 
 	{
 	 printf("Valid Move");
+	 editGrid();
 	}
 	else 
 	{
