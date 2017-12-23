@@ -12,12 +12,21 @@
     
 main()
 {
+	char exit;
+	
+	//do
+	//{
 	printf("Tic Tac Toe\n");
 	printf("\nPlayer 1 = X\n");
 	printf("Player 2 = O\n\n");
 	
     printGrid();				// print original integer grid
 	playGame();					// until gameOver changes to 1
+	
+	printf("\n\nContinue? Press x to exit\n");
+	scanf(" %c",exit);
+	//}
+	//while(exit!='x');
 	
 	getch();
     return(0);
@@ -55,9 +64,11 @@ playGame()
 	
 	while(gameOver!=1)	
 	//while(round<5)
+	//do 									// ERROR: goes to round 4 for player 2
 	{
 	 printf("\n\nROUND %d:\n",round+1);
 	 player=1;
+	 
 	 do
 	 {
 	  winnerTest(); 						// ERROR: goes to already x or o
@@ -72,13 +83,15 @@ playGame()
 	  
 	  checkInput1to9();
 	  ++player;
-	  }// 									// replace previous bracket
+	  
+	  }// 									// replace previous bracket -- still goes to round 4 before exit
+	  
 	 }
      while(player<3);		// player go
      
      ++round;
 	}	// round
-	
+	//while(gameOver!=1);
 }		// funct
 
 /*****************************************************/
