@@ -75,7 +75,8 @@ playGame()
 	  }// 									// replace previous bracket
 	 }
      while(player<3);		// player go
-     //++round;
+     
+     ++round;
 	}	// round
 	
 }		// funct
@@ -213,13 +214,13 @@ winnerTest()
 	
 	if(winner==1)
 	{
-	 printf("\nGAME OVER\nPlayer 1 Is The Winner\n\n");
+	 printf("\n\nGAME OVER\nPlayer 1 Is The Winner");
 	 player+=2;		// terminate player 1 or 2 turn loop
 	 gameOver=1;	// terminate rounds loop
 	}	
 	if(winner==2)
 	{
-	 printf("\nGAME OVER\nPlayer 2 Is The Winner\n\n");
+	 printf("\n\nGAME OVER\nPlayer 2 Is The Winner");
 	 player+=2;
 	 gameOver=1;
 	}	
