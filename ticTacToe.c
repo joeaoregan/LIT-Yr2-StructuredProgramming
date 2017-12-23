@@ -20,8 +20,8 @@ main()
 	printf("\nPlayer 1 = X\n");
 	printf("Player 2 = O\n\n");
 	
-    printGrid();				// print original integer grid
-	playGame();					// until gameOver changes to 1
+    printGrid();					// print original integer grid
+	roundCount();					// until gameOver changes to 1
 	
 	//printf("\n\nContinue? Press x to exit\n");
 	//scanf(" %c",exit);
@@ -55,10 +55,10 @@ printGrid()
 }
 
 /*****************************************************/
-//				Function 2: play game
+//				Function 2: Round Counter
 /*****************************************************/
 
-playGame()
+roundCount()
 {
 	int round=0;
 	
@@ -67,25 +67,34 @@ playGame()
 	 printf("\n\nROUND %d:\n",round+1);
 	 player=1;
 	 	
-	 while(player<3)
-	 {
-	  winnerTest(); 						
-	  
-	  if((gameOver!=1) && (player < 3))
-	  {	  
-	  printf("\nPlayer %d: please select postion 1-9: ",player);
-	  scanf(" %d",&input);
-	  
-	  checkInput1to9();
-	  ++player;
-	  }
-	 }
+	 playerTurn();
      ++round;
 	}	// round
 }		// funct
 
 /*****************************************************/
-//		Function 3: Check if user input is 1 to 9
+//				Function 3: Player Turn
+/*****************************************************/
+
+playerTurn()
+{
+	while((gameOver!=1)&&(player<3))					// player 2 goes to round 4
+	{
+	 winnerTest(); 										// needs to be here				
+	  
+	 //if((gameOver!=1) && (player < 3))
+	 //{	  
+	  printf("\nPlayer %d: please select postion 1-9: ",player);
+	  scanf(" %d",&input);
+	  
+	  checkInput1to9();
+	  ++player;
+	 //}
+	}
+}		// funct
+
+/*****************************************************/
+//		Function 4: Check if user input is 1 to 9
 /*****************************************************/
 
 checkInput1to9()
@@ -116,7 +125,7 @@ checkInput1to9()
 }
 
 /*****************************************************/
-//		Function 4: Check if X or O already
+//		Function 5: Check if X or O already
 /*****************************************************/
 
 checkInputXorO()
@@ -148,7 +157,7 @@ checkInputXorO()
 }
 
 /*****************************************************/
-//			Function 5: Output the Grid
+//			Function 6: Output the Grid
 /*****************************************************/
 
 editGrid()
@@ -163,8 +172,8 @@ editGrid()
 	  	
 	   if (input==grid[i][j])
 		{
-		 if(player==1)arrOutput[i][j]='X'; // player 1 = X
-		 if(player==2)arrOutput[i][j]='O'; // player 2 = O
+		 if(player==1)arrOutput[i][j]='X';				 // player 1 = X
+		 if(player==2)arrOutput[i][j]='O'; 				// player 2 = O
 	    }
 	    printf("%c ",arrOutput[i][j]);
         if (j<2) printf("| ");
@@ -175,7 +184,7 @@ editGrid()
 }		// funct
 
 /*****************************************************/
-//				Function 6: Check Winner
+//				Function 7: Check Winner
 /*****************************************************/
 
 winnerTest()
