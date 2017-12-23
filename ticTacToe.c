@@ -38,7 +38,7 @@ printGrid()
 {  
 	int x,y;
 
-    printf("Select Position From Grid:\n");
+    printf("Select Position On Grid:\n");
  
     for(x=0;x<3;++x)
      {
@@ -59,10 +59,9 @@ printGrid()
 roundCount()
 {
 	int round=0;
-	
-	while(gameOver!=1)									// Game Over Condition
+	while(round<6)
 	{	
-	 printf("\n\nROUND %d:\n",round+1);	
+	 printf("\n\nROUND %d:\n",round+1);					// while(gameOver!=1) *working without ***CHECK
 	 	
 	 playerTurn();
      ++round;											// increment round
@@ -76,7 +75,7 @@ roundCount()
 playerTurn()
 {
 	int i;
-	while((gameOver!=1)&&(player<3))					// player 2 goes to round 4 ***fixed
+	while((gameOver!=1)&&(player<3))					// player 2 goes to round 4 *fixed
 	{
 	 for(i=1;i<=2;i++)
 	 { 	 
@@ -88,9 +87,9 @@ playerTurn()
 	 
 	  checkInput();										// Increment Player **has to go after checkInput() **for loop not working
 	  }
-	 }													// i
+	 }
 	}
-}														// funct
+}		// funct
 
 /*****************************************************/
 //		Function 4: Check if user input is 1 to 9
