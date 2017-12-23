@@ -4,7 +4,7 @@
     char grid[3][3]={'1','2','3','4','5','6','7','8','9'};			// original grid
 	char outputGrid[3][3]={'1','2','3','4','5','6','7','8','9'};	// edited grid
 	
-//	void testUserInput(int k2,char testInput);
+void testUserInput(int k2,char testInput);
     
 main()
 {
@@ -48,7 +48,7 @@ playGame()
 	  printf("\nPlayer %d: please select postion 1-9: ",k);
 	  scanf(" %c",&user);
 	  
-	  //testUserInput(k,user);
+	  testUserInput(k,user);
 	  //editGrid(k);
 	  
      }	// k
@@ -70,7 +70,7 @@ editGrid(int player)
 		 if(player==2)outputGrid[i][j]='X'; // player 2 = X
 	    }
 	    printf("%c ",outputGrid[i][j]);
-        if (j<2)printf("| ");
+        if (j<2) printf("| ");
 	   } // j
 	  if(i<2)printf("\n__________\n");
 	  else printf("\n");
@@ -79,10 +79,10 @@ editGrid(int player)
 
 
 
-/*
+
 // Function 4: Test User Input
 void testUserInput(int k2,char testInput)
-{
+{/*
 	//if(testInput < 1) printf("not expected input"); //&&(testInput > 9))
 	//else editGrid(k2);
 	int i,j;
@@ -93,7 +93,12 @@ void testUserInput(int k2,char testInput)
 	 {
 	  //if (testInput==grid[i][j]) editGrid(k2);	
 	  if (testInput!='1') printf("%c",testInput);// editGrid(k2);
-	  else printf("Not Expected input");
+	  
+	  else printf("Not Expected input"); // LOOPS **************
+	  
+	  
 	 }	// i
 	}	// j
-}*/
+	*/
+	if(testInput==
+}
