@@ -3,16 +3,14 @@
 
     //char grid[3][3]={'1','2','3','4','5','6','7','8','9'};		// function 1
     int grid[3][3]={1,2,3,4,5,6,7,8,9};								// function 1
-    int user; 														// function 2, 3, 4
+    int input; 														// function 2, 3, 4
     int player;														// function 2, 3, 4
-    char outputGrid[3][3]={'1','2','3','4','5','6','7','8','9'};	// function 4, edited grid
+    char arrOutput[3][3]={'1','2','3','4','5','6','7','8','9'};	// function 4, edited grid
     
 main()
 {
     printGrid();
 	playGame();  // Goes through 5 rounds
-	
-	printf("\nUser: %c",user);
 	
 	getch();
     return(0);
@@ -36,32 +34,34 @@ printGrid()
       if(x<2)printf("\n__________\n");
      } // x
 }
+/*****************************************************/
 
 // function 2: play game
 playGame()
 {
 	int round;
-	player=1;
 	
 	for(round=0;round<=5;++round) // rounds loop
 	{
 	 printf("\n\nROUND %d:\n",round+1);
-	 
+	 player=1;
 	 //for(player=1;player<=2;++player) // Player goes
+	 
 	 do
 	 {
 	  printf("\nPlayer %d: please select postion 1-9: ",player);
-	  scanf(" %d",&user);											// scan as int ***
+	  scanf(" %d",&input);											// scan as int ***
 	  
-	  checkInput2();
+	  checkInput1to9();
 	  ++player;
 	 }	// player go
      while(player<3);
+     
 	}	// round
 }		// funct
 
 // Function 3: Check User Input
-checkInput2()
+checkInput1to9()
 {
 	int x,y;
 	int checkAvailable;
@@ -70,7 +70,7 @@ checkInput2()
 	{
 	 for(y=0;y<3;++y)
 	 {
-	  if (user==grid[x][y]) 		// test for already x or o
+	  if (input==grid[x][y]) 		// test for already x or o - if(arrOuput[x][y]=='X'
 	  {
 	   checkAvailable=1;
 	  }
@@ -79,34 +79,37 @@ checkInput2()
 	
 	if(checkAvailable==1) 
 	{
-	 editGrid2();
+	 //printf("\noutput grid %c",[char]user);
+	 editGrid();
 	}
 	else 
 	{
 	 printf("Between 1 to 9!!! Try Again");
-	 --player;					 // RESET THE PLAYERS MOVE!!!!!!
+	  --player;					 // RESET THE PLAYERS MOVE!!!!!!
 	}	
 }
 
 // Function 4: Output the Grid
-editGrid2()
+editGrid()
 {
 	int i,j;
-	char check=user;
 		  
 	 for(i=0;i<3;++i)
 	 {
 	  for(j=0;j<3;++j)
 	  {
-	   if (check==outputGrid[i][j])
+	  	//printf("%c",input);
+	  	
+	   if (input==grid[i][j])
 		{
-		 if(player==1)outputGrid[i][j]='O'; // player 1 = O
-		 if(player==2)outputGrid[i][j]='X'; // player 2 = X
+		 if(player==1)arrOutput[i][j]='O'; // player 1 = O
+		 if(player==2)arrOutput[i][j]='X'; // player 2 = X
 	    }
-	    printf("%c ",outputGrid[i][j]);
+	    printf("%c ",arrOutput[i][j]);
         if (j<2) printf("| ");
 	   } // j
 	  if(i<2)printf("\n__________\n");
 	  else printf("\n");
 	 }	// i
 }		// funct
+
