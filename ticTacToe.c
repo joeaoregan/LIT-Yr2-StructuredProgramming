@@ -6,25 +6,46 @@
 	Year 2
 */
 
+#if defined _WIN32 || defined _WIN64
 #include <stdio.h>
+#include <windows.h>   											// WinApi header
+#endif
+
+#define NORM  15
+#define BLUE   9
+#define GREEN 10
+#define CYAN  11
+#define RED   12
+
+// Function prototypes
+void playGame();
+void displayGrid(int playerMove);
+void reset();
+
+HANDLE  hConsole;											// Format output for Windows command prompt
 
 int player;												// Which players turn
 int grid[3][3] = {1, 2, 3, 4, 5, 6, 7, 8, 9};								// original grid
 char arrOutput[3][3] = {'1','2','3','4','5','6','7','8','9'};						// edited grid
     
 int main() {
-	char exit = 'n';
+	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);							// Standard output device
+	char *str;
+	char input = 'n';
 	
-	while (exit != 'x') {
+	while (input != 'x') {
+		SetConsoleTextAttribute(hConsole, CYAN);
 		printf("Tic Tac Toe\n\nPlayer 1 = X\nPlayer 2 = O\n\n");
+		SetConsoleTextAttribute(hConsole, NORM);
 		
 		displayGrid(0);										// print original integer grid
 		playGame();										// until gameOver changes to 1
 		
 		printf("\n\nContinue? Press x to exit\n");
+		gets(str);
 		
-		exit = gets(stdin);
-		//fgets(exit, 3, stdin);
+		//input = gets((char*)stdin);
+		input = str[0];
 		reset();
 	} 
 	
@@ -45,9 +66,6 @@ void playGame() {
 			if((gameOver != 1) && (player < 3)) {
 				printf("\nPlayer %d: please select postion 1-9: ", player);
 				scanf(" %d", &input);							// Get input from player
-				//char* in;
-				//gets(in);
-				//input = atoi(gets(in));
 								
 				if (checkInput(input) == 1) {						// If the character entered is OK
 					displayGrid(input);						// Display the grid
@@ -91,11 +109,34 @@ void displayGrid(int playerMove) {
 				if (player == 1) arrOutput[i][j] = 'X'; 				// player 1 = X
 				if (player == 2) arrOutput[i][j] = 'O'; 				// player 2 = O
 			}
-			printf("%c ",arrOutput[i][j]);
-			if (j < 2) printf("| ");
+			
+			if (arrOutput[i][j] == 'X' ) {
+				SetConsoleTextAttribute(hConsole, BLUE);
+				printf("%c ",arrOutput[i][j]);	
+				SetConsoleTextAttribute(hConsole, NORM);
+			}
+			else if (arrOutput[i][j] == 'O' ) {
+				SetConsoleTextAttribute(hConsole, GREEN);
+				printf("%c ",arrOutput[i][j]);	
+				SetConsoleTextAttribute(hConsole, NORM);
+			}
+			else
+				printf("%c ",arrOutput[i][j]);	
+			
+			if (j < 2)  {	
+				SetConsoleTextAttribute(hConsole, RED);
+				printf("| ");				
+				SetConsoleTextAttribute(hConsole, NORM);
+			}
 		}
 		
-		(i < 2) ? printf("\n__________\n") : printf("\n");					// Line separating rows, or new line
+		//(i < 2) ? printf("\n__________\n") : printf("\n");					// Line separating rows, or new line
+		if (i<2){					
+			SetConsoleTextAttribute(hConsole, RED);						// SetConsoleTextAttribute() sets foreground (text) and background colour for characters in the console
+			printf("\n__________\n");							// Display message in single colour
+			SetConsoleTextAttribute(hConsole, NORM);					// Reset to original colour scheme
+		}
+
 	}
 }
 
