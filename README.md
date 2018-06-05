@@ -20,7 +20,7 @@ __________
 
 * 05/06/2018 Added coloured characters
 
-![alt text](https://raw.githubusercontent.com/joeaoregan/Yr2-TicTacToe/master/Screenshots/TicTacToe2.png "TicTacToe")
+![TicTacToe](https://raw.githubusercontent.com/joeaoregan/Yr2-TicTacToe/master/Screenshots/TicTacToe1.png "TicTacToe")
 
 TicTacToe console game
 
@@ -28,7 +28,14 @@ TicTacToe console game
 
 ---
 
-![alt text](https://raw.githubusercontent.com/joeaoregan/Yr2-TicTacToe/master/Screenshots/TicTacToe1.png "TicTacToe")
+![TicTacToe Coloured Text](https://raw.githubusercontent.com/joeaoregan/Yr2-TicTacToe/master/Screenshots/TicTacToe2.png "TicTacToe Coloured Text")
 
-Added Colour
+Added colour
+
+---
+
+![TicTacToe More Coloured Text](https://raw.githubusercontent.com/joeaoregan/Yr2-TicTacToe/master/Screenshots/TicTacToe3.png "TicTacToe More Coloured Text")
+
+More coloured text
+
 ---

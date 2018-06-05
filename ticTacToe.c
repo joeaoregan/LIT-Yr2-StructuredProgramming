@@ -4,11 +4,13 @@
 	
 	Games Design and Development
 	Year 2
+	
+	TicTacToe game in C with coloured text
 */
 
 #if defined _WIN32 || defined _WIN64
 #include <stdio.h>
-#include <windows.h>   											// WinApi header
+#include <windows.h>   											// WinApi header for coloured text
 #endif
 
 #define NORM  15
@@ -64,7 +66,12 @@ void playGame() {
 			gameOver = winnerTest(); 						
 			
 			if((gameOver != 1) && (player < 3)) {
+				if(player==1) 
+					SetConsoleTextAttribute(hConsole, BLUE);
+				else
+					SetConsoleTextAttribute(hConsole, GREEN);
 				printf("\nPlayer %d: please select postion 1-9: ", player);
+				SetConsoleTextAttribute(hConsole, NORM);
 				scanf(" %d", &input);							// Get input from player
 								
 				if (checkInput(input) == 1) {						// If the character entered is OK
@@ -102,7 +109,7 @@ int checkInput(int playerMove) {
 // Output the Grid
 void displayGrid(int playerMove) {
 	int i, j;
-			  
+					  
 	for(i = 0; i < 3; ++i) {
 		for(j = 0; j < 3; ++j) {			
 			if (playerMove == grid[i][j]) {
@@ -136,6 +143,7 @@ void displayGrid(int playerMove) {
 			printf("\n__________\n");							// Display message in single colour
 			SetConsoleTextAttribute(hConsole, NORM);					// Reset to original colour scheme
 		}
+		else printf("\n");
 
 	}
 }
@@ -169,7 +177,7 @@ int winnerTest() {
 	return 0;
 }
 
-// Reset the game
+// Reset the game grid
 void reset() {
 	char reset[3][3]={'1','2','3','4','5','6','7','8','9'};	
 	int x, y;
