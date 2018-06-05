@@ -1,3 +1,11 @@
+/*
+	Joe O'Regan
+	K00203642
+	
+	Games Design and Development
+	Year 2
+*/
+
 #include <stdio.h>
 
 int player;												// Which players turn
