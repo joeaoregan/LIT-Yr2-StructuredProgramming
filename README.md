@@ -12,18 +12,15 @@ __________
 7 | 8 | 9
 ```
 
-# TicTacToe - C
-## Joe O'Regan
-## K00203642
-### Games Design and Development: Year 2
-### Structured Programming
+# LIT: Games Design and Development
+## Year 2: Structured Programming
+### TicTacToe - C
 
 * 05/06/2018 Added coloured characters
 
 ![TicTacToe](https://raw.githubusercontent.com/joeaoregan/Yr2-TicTacToe/master/Screenshots/TicTacToe1.png "TicTacToe")
 
 TicTacToe console game
-
 
 
 ---
