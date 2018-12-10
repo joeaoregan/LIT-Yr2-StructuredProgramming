@@ -15,6 +15,6 @@ Program to determine roof angles, and text based tank game using functions of th
 ---
 
 ![Structured Programming CA - Roof Measurements](https://raw.githubusercontent.com/joeaoregan/LIT-Yr2-S3-StructuredProgramming-CA1-MathsLibrary/master/Screenshots/2_RoofMeasurements.png "2. Roof Measurements")
-###### 1. Structured Programming CA - Roof Measurements
+###### 2. Structured Programming CA - Roof Measurements
 
 ---
