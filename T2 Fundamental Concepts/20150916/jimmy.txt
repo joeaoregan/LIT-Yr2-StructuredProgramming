@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main (int argc, char** argv)
+{
+        int mod = 5 % 2;
+        float fadd, fmin, fdiv = 0.;
+
+        printf("%04d\n", 10000);
+        printf("%d\n", 5 % 2);
+        printf("%.2f\n", 5.0 / 2);
+        return 0;
+}
+
+printf("%04d\n", 5 / 2);
+gives:
+0002
+
+
+printf("%4d\n", 5 / 2);
+gives:
+   2
+(d = integer, 4 = at least 4 spaces)
