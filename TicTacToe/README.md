@@ -28,17 +28,17 @@ __________
 
 ### Screenshots
 
-![TicTacToe](https://raw.githubusercontent.com/joeaoregan/LIT-Yr3-S3-StructuredProgramming/master/Screenshots/TicTacToe1.png "TicTacToe")
+![TicTacToe](https://raw.githubusercontent.com/joeaoregan/LIT-Yr2-S3-StructuredProgramming/master/Screenshots/TicTacToe1.png "TicTacToe")
 ###### 1. TicTacToe console game
 
 ---
 
-![TicTacToe Coloured Text](https://raw.githubusercontent.com/joeaoregan/LIT-Yr3-S3-StructuredProgramming/master/Screenshots/TicTacToe2.png "TicTacToe Coloured Text")
+![TicTacToe Coloured Text](https://raw.githubusercontent.com/joeaoregan/LIT-Yr2-S3-StructuredProgramming/master/Screenshots/TicTacToe2.png "TicTacToe Coloured Text")
 ###### 2. Added colour
 
 ---
 
-![TicTacToe More Coloured Text](https://raw.githubusercontent.com/joeaoregan/LIT-Yr3-S3-StructuredProgramming/master/Screenshots/TicTacToe3.png "TicTacToe More Coloured Text")
+![TicTacToe More Coloured Text](https://raw.githubusercontent.com/joeaoregan/LIT-Yr2-S3-StructuredProgramming/master/Screenshots/TicTacToe3.png "TicTacToe More Coloured Text")
 ###### 3. More coloured text
 
 ---
