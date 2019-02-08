@@ -10,6 +10,9 @@
 
 Assignment 2 for Structured Proramming module or LIT, BSc Computing (Games Design and Development)
 
+* Levels of difficulty
+* Reads and writes high scores to file
+
 ---
 
 ### Screenshot

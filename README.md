@@ -8,11 +8,11 @@
 
 ### Structured Programming
 
-* CA1: Maths Library
-* CA2: Hangman
-* CA3: In Class Exam
-* Practicals
-* TicTacToe
+* [CA1: Maths Library](https://github.com/joeaoregan/LIT-Yr3-S3-StructuredProgramming/tree/master/CA1-Maths)
+* [CA2: Hangman](https://github.com/joeaoregan/LIT-Yr3-S3-StructuredProgramming/tree/master/CA2-Hangman)
+* [CA3: In Class Exam](https://github.com/joeaoregan/LIT-Yr3-S3-StructuredProgramming/tree/master/CA3-InClass)
+* [Practicals](https://github.com/joeaoregan/LIT-Yr3-S3-StructuredProgramming/tree/master/Practicals)
+* [TicTacToe](https://github.com/joeaoregan/LIT-Yr3-S3-StructuredProgramming/tree/master/TicTacToe)
 
 ---
 
