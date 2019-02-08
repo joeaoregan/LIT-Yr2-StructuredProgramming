@@ -1,38 +1,49 @@
-```c
- 
-Tic Tac Toe
+# Structured Programming
+## Joe O'Regan (K00203642)
+### Year 2, Semester 3
+##### BSc Computing (Games Design and Development)
+##### Limerick Institute of Technology
 
-Player 1 = X
-Player 2 = O
+---
 
-1 | 2 | 3
-__________
-4 | 5 | 6
-__________
-7 | 8 | 9
-```
+### Structured Programming
 
-# LIT: Games Design and Development
-## Year 2: Structured Programming
-### TicTacToe - C
+* CA1: Maths Library
+* CA2: Hangman
+* Practicals
+* TicTacToe
 
-* 05/06/2018 Added coloured characters
+---
 
-![TicTacToe](https://raw.githubusercontent.com/joeaoregan/Yr2-TicTacToe/master/Screenshots/TicTacToe1.png "TicTacToe")
+### Screenshots
 
-TicTacToe console game
+![Structured Programming CA - Tank Game](https://raw.githubusercontent.com/joeaoregan/LIT-Yr3-S3-StructuredProgramming/master/Screenshots/ca1-1-TankGame.png "1. Tank Game")
+###### 1. Structured Programming CA 1 - Tank Game
+
+---
+
+![Structured Programming CA - Roof Measurements](https://raw.githubusercontent.com/joeaoregan/LIT-Yr3-S3-StructuredProgramming/master/Screenshots/ca1-2-RoofMeasurements.png "2. Roof Measurements")
+###### 2. Structured Programming CA 1 - Roof Measurements
+
+---
+
+![Structured Programming CA2: Hangman](https://raw.githubusercontent.com/joeaoregan/LIT-Yr3-S3-StructuredProgramming/master/Screenshots/ca2-hangman1.png "Structured Programming CA2: Hangman")
+###### 3. Structured Programming CA 2: Hangman (Programmed in C)
+
+---
+
+![TicTacToe](https://raw.githubusercontent.com/joeaoregan/LIT-Yr3-S3-StructuredProgramming/master/Screenshots/TicTacToe1.png "TicTacToe")
+###### 4. TicTacToe console game
 
 
 ---
 
-![TicTacToe Coloured Text](https://raw.githubusercontent.com/joeaoregan/Yr2-TicTacToe/master/Screenshots/TicTacToe2.png "TicTacToe Coloured Text")
-
-Added colour
+![TicTacToe Coloured Text](https://raw.githubusercontent.com/joeaoregan/LIT-Yr3-S3-StructuredProgramming/master/Screenshots/TicTacToe2.png "TicTacToe Coloured Text")
+###### 5. Added colour
 
 ---
 
-![TicTacToe More Coloured Text](https://raw.githubusercontent.com/joeaoregan/Yr2-TicTacToe/master/Screenshots/TicTacToe3.png "TicTacToe More Coloured Text")
-
-More coloured text
+![TicTacToe More Coloured Text](https://raw.githubusercontent.com/joeaoregan/LIT-Yr3-S3-StructuredProgramming/master/Screenshots/TicTacToe3.png "TicTacToe More Coloured Text")
+###### 6. More coloured text
 
 ---
