@@ -4,7 +4,7 @@
 
 ---
 
-![Structured Programming CA2: Hangman](https://raw.githubusercontent.com/joeaoregan/LIT-Yr2-S3-StructuredProgramming-CA2-Hangman-C/master/Screenshots/hangman1.png "Structured Programming CA2: Hangman")
+![Structured Programming CA2: Hangman](https://raw.githubusercontent.com/joeaoregan/LIT-Yr3-S3-StructuredProgramming/master/Screenshots/ca2-hangman1.png "Structured Programming CA2: Hangman")
 ###### 1. Structured Programming CA2: Hangman (Programmed in C)
 
 ---
