@@ -10,6 +10,7 @@
 
 * CA1: Maths Library
 * CA2: Hangman
+* CA3: In Class Exam
 * Practicals
 * TicTacToe
 
