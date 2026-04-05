@@ -8,15 +8,9 @@
 
 ---
 
-### Practicals (C)
-
-Practicals from the LIT, Games Design and Development second-year semester 3 Structured Programming module
-
----
-
 <div align="center">
 
-[![Back](https://img.shields.io/badge/←%20Back%20to%20CA%20%203-gray?style=flat-square)](../CA3-InClass/README.md) | 
-[![Next](https://img.shields.io/badge/Next%20Tic%20Tac%20Toe%20→-blue?style=flat-square)](../TicTacToe/README.md)
+[![Back](https://img.shields.io/badge/←%20Back%20to%20CA%202-gray?style=flat-square)](../CA2-Hangman/README.md) | 
+[![Next](https://img.shields.io/badge/Next%20Practicals%20→-blue?style=flat-square)](../Practicals/README.md)
 
 ---
